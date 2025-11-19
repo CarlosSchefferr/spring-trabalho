@@ -15,17 +15,17 @@ public class ChamadoDTO implements Serializable {
     private LocalDate dataAbertura = LocalDate.now();
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFechamento;
-    @NotNull(message = "O campo PRIORIDADE é requerido")
+    @NotNull(message = "Informe a prioridade do chamado")
     private Integer prioridade;
-    @NotNull(message = "O campo STATUS é requerido")
+    @NotNull(message = "Informe o status do chamado")
     private Integer status;
-    @NotNull(message = "O campo TÍTULO é requerido")
+    @NotNull(message = "Informe o título do chamado")
     private String titulo;
-    @NotNull(message = "O campo OBSERVAÇÕES é requerido")
+    @NotNull(message = "O campo observações é obrigatório")
     private String observacoes;
-    @NotNull(message = "O campo TECNICO é requerido")
+    @NotNull(message = "Informe o técnico do chamado")
     private Long tecnico;
-    @NotNull(message = "O campo CLIENTE é requerido")
+    @NotNull(message = "Informe o cliente do chamado")
     private Long cliente;
     private String nomeTecnico;
     private String nomeCliente;

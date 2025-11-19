@@ -19,20 +19,20 @@ public class TecnicoDTO implements Serializable {
 
     protected Long id;
 
-    @NotBlank(message = "O campo NOME é requerido")
-    @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres")
+    @NotBlank(message = "Informe o nome do técnico.")
+    @Size(min = 3, max = 100, message = "O nome deve conter entre 3 e 100 caracteres.")
     protected String nome;
 
-    @CPF(message = "CPF inválido")
-    @NotBlank(message = "O campo CPF é requerido")
+    @CPF(message = "Informe um CPF válido.")
+    @NotBlank(message = "O CPF não pode estar vazio.")
     protected String cpf;
 
-    @NotBlank(message = "O campo EMAIL é requerido")
-    @Email(message = "Formato de e-mail inválido")
+    @NotBlank(message = "O e-mail é obrigatório.")
+    @Email(message = "Informe um e-mail válido.")
     protected String email;
 
-    @NotBlank(message = "O campo SENHA é requerido")
-    @Size(min = 6, max = 20, message = "A senha deve ter entre 6 e 20 caracteres")
+    @NotBlank(message = "A senha é obrigatória.")
+    @Size(min = 6, max = 20, message = "A senha deve ter entre 6 e 20 caracteres.")
     protected String senha;
 
     protected Set<Integer> perfis = new HashSet<>();
