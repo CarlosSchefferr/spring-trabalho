@@ -39,6 +39,16 @@ public class ChamadoService {
         return repository.save(newChamado(objDTO));
     }
 
+    public void delete(Long id) {
+        Chamado chamado = findById(id);
+
+        if (!chamado.getStatus().equals(Status.ENCERRADO)) {
+            throw new IllegalArgumentException("Chamado só pode ser deletado se estiver encerrado");
+        }
+
+        repository.deleteById(id);
+    }
+
     public Chamado update(Long id, ChamadoDTO objDTO) {
         objDTO.setId(id);
         Chamado oldObj = findById(id);

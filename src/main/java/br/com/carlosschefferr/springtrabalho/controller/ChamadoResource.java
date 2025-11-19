@@ -30,6 +30,12 @@ public class ChamadoResource {
         return ResponseEntity.ok().body(mapper.toDto(obj));
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping
     public ResponseEntity<List<ChamadoDTO>> findAll() {
         List<Chamado> list = service.findAll();
